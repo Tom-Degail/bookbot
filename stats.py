@@ -12,10 +12,15 @@ def charCount(text):
         dict[c] +=1
     return dict     
 
-def dictSorted(dict):
-    array = []
-    for i in dict:
-        array.append({"name" : i, "num" : dict[i]})
-    return array
+def dictSorted(dic):
+    L = []
+    for i in dic:
+        L.append({"name" : i, "num" : dic.get(i)})
+    L.sort(reverse = True, key= lambda item: item["num"])
+    return L
+
+
+dic = charCount("Bonjour je suis Tom")
+print(dictSorted (dic))
 
             
